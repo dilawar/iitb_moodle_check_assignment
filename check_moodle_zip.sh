@@ -7,6 +7,10 @@ if [ $# -lt 1 ]; then
     exit
 fi
 
+echo "Cleaning up old work"
+rm -rf _work 
+mkdir -p _work
+
 ## Stage 1: Unzip.
 ZIPFILE="$1"
 WORKDIR=`pwd`/_work
@@ -32,3 +36,10 @@ while IFS= read -r -d '' line; do
         find . -type f -print0 | xargs -0 -I file $CURRDIR/helpers/unarchive.sh file
     )
 done < <(find $WORKDIR/__students__ -maxdepth 1 -type d -not -name ".git" -print0)
+
+## Final stage.
+echo "|| Running sniffer"
+(
+    cd sniffer
+    ./run.sh --config $CURRDIR/config
+)
