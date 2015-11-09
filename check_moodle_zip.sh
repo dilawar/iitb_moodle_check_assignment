@@ -35,7 +35,7 @@ while IFS= read -r -d '' line; do
         cd $line
         find . -type f -print0 | xargs -0 -I file $CURRDIR/helpers/unarchive.sh file
     )
-done < <(find $WORKDIR/__students__ -maxdepth 1 -type d -not -name ".git" -print0)
+done < <(find $WORKDIR/__students__ -maxdepth 1 -mindepth 1 -type d -not -name ".git" -print0)
 
 ## Final stage.
 echo "|| Running sniffer"
