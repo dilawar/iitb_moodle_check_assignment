@@ -8,24 +8,31 @@ MIMETYPE=${MIMETYPE,,}
 # remove leading whitespaces.
 read -rd '' MIMETYPE <<< "$MIMETYPE"
 
+DESTDIR=${2-unarchived}
+mkdir -p "$DESTDIR"
+
 function unarchive_rar 
 {
-    unrar x -r "$1"
+    unrar x "$1" "$DESTDIR"
+    rm -f "$1"
 }
 
 function unarchive_zip
 {
-    unzip "$1"
+    unzip "$1" -d "$DESTDIR"
+    rm -f "$1"
 }
 
 function unarchive_7zip 
 {
-    7z e "$1"
+    7za x "$1" -o"$DESTDIR"
+    rm -f "$1"
 }
 
 function unarchive_gzip
 {
-    tar xvf "$1"
+    tar xvf "$1" -C "$DESTDIR"
+    rm -f "$1"
 }
 
 # process stuff
