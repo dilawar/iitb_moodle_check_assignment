@@ -3,7 +3,7 @@ Use code-sniffer on downloaded zip file from MOODLE.
 
 - Download this
 
-    git clone -r https://github.com/dilawar/iitb_moodle_check_assignment
+        git clone -r https://github.com/dilawar/iitb_moodle_check_assignment
   
   Option `-r` is rather important. DO NOT miss it.
 
