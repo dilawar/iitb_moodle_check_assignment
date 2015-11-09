@@ -32,7 +32,7 @@ dir = ../_work/__students__/
 
 # These are the extension of files we want of files. If you want to compare
 # all files leave it empty or .* will do. 
-extension = cir, pdf, spice, txt
+extension = .*
 
 # Specify language of file.
 # Available : vhdl, verilog, ctype, text, pdf 
@@ -70,4 +70,3 @@ name = difflib
 ## DO NOT CHANGE THIS IF USING THIS APPLICATION
 # path : Path where sqlite3 database should be saved. 
 path = ../_result
-
