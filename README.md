@@ -1,11 +1,12 @@
 # iitb_moodle_check_assignment
 Use code-sniffer on downloaded zip file from MOODLE.
 
-- Download this
+- Download this (DO NOT USE download zip button). You will not get the
+  submodule. Use `git` as follows to download these scripts.
 
         git clone -r https://github.com/dilawar/iitb_moodle_check_assignment
   
-  Option `-r` is rather important. DO NOT miss it.
+  Option `-r` is rather important. If you miss it, run `./bootstrap`.
 
 - Download assignments from MOODLE. It is a single zip file. Right? Let's call
   it assignment.zip. Save it somewhere, let's say `~/Downloads/assignment.zip`
